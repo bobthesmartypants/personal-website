@@ -1,0 +1,53 @@
+@import "../utils/ColorPalette.css";
+@import "../utils/Fonts.css";
+
+* span {
+    cursor: default;
+}
+
+.Navbar {
+    background: linear-gradient(var(--darkergray), var(--darkgray));
+    height: 64px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    box-shadow: 0px 2px 20px #555;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.NavOps {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: stretch;
+}
+
+.NavOp {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.NavOpText {
+    color: var(--white);
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.LogoContainer {
+    height: 100%;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Logo {
+    color: var(--white);
+    font-size: 40px;
+    font-family: 'Overlock', cursive;
+}
