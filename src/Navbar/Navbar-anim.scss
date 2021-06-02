@@ -5,13 +5,19 @@
 
 $pi: 3.1415;
 $menu-items: 5; // hardcoded cuz I'm bad
-$start-y: -3;
-$open-distance: 7;
+$start-y: -3em;
+$open-distance: 7em;
 $timing-function: cubic-bezier(.3,.85,.5,1);
 
-@function sqrt($r) {
-  $unit: $r * 0 + 1;
-  $r: $r / $unit; // strip unit
+@function getUnit($r){
+  @return $r * 0 + 1;
+}
+
+/*
+ * $r: number to square root, with unit $unit*$unit
+ */
+@function sqrt($r, $unit) {
+  $r: $r / ($unit*$unit); // strip unit
 
   $x0: 1;
   $x1: $x0;
@@ -33,11 +39,11 @@ $timing-function: cubic-bezier(.3,.85,.5,1);
   @if $stepped-y < $base {
     $stepped-y: ($base - $stepped-y) + $base;
   }
-  @return $stepped-y;
+  @return -$stepped-y;
 }
 
 @function calc-x($i, $y, $n) {
-  $abs-x: sqrt($open-distance*$open-distance - $y*$y);
+  $abs-x: sqrt($open-distance*$open-distance - $y*$y, getUnit($y));
   @if $i <= $n/2 {
     $abs-x: $abs-x * -1;
   }
@@ -48,7 +54,7 @@ $timing-function: cubic-bezier(.3,.85,.5,1);
     $y: calc-y($i, $menu-items);
     $x: calc-x($i, $y, $menu-items);
     &:nth-child(#{$i}){
-      transform: translate3d(0em + $x,0em - $y,0);
+      transform: translate3d($x,$y,0);
       visibility: visible;
       opacity: 1;
       transition: transform 80ms+(80ms*$i) $timing-function, opacity 80ms linear, visibility 0ms linear 0ms;

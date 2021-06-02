@@ -5,11 +5,7 @@ import './Navbar.scss';
 import Logo from "./Logo";
 import NavOps from "./NavOps";
 
-const Navbar = () => {
-    // optionLabels and optionPaths biject
-    // also modify $menu-items in Navbar-anim.scss if array length changes
-    const optionLabels = ["Home", "Resume", "Hobbies", "Music", "A/V"];
-    const optionPaths = ["/", "/resume", "/hobbies", "/music", "/av"];
+const Navbar = (props) => {
 
     const [showNav, setShowNav] = useState(0);
     const [leftTop, setLeftTop] = useState(0);
@@ -42,7 +38,7 @@ const Navbar = () => {
     return (
         <div className="Navbar">
             <Logo logoClick={navReveal}>
-                <NavOps options={optionLabels} paths={optionPaths} showNav={showNav}/>
+                <NavOps options={props.optionLabels} paths={props.optionPaths} showNav={showNav}/>
             </Logo>
         </div>
     );
