@@ -40,24 +40,6 @@
   padding: 0.5em 0;
 }
 
-.NavOp[shownav="1"] {
-  animation: wobble 1s 1;
-}
-@keyframes wobble {
-  25% {
-    transform: rotate(15deg);
-  }
-  50% {
-    transform: rotate(-30deg);
-  }
-  75% {
-    transform: rotate(5deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
 .NavOpText {
   text-decoration: none;
   font-weight: bold;
@@ -82,4 +64,32 @@
   font-family: 'Overlock', cursive;
   color: var(--white);
   text-shadow: 0 0 30px var(--darkergray);
+}
+
+
+/*
+ * Animation for opening and closing the navbar
+ */
+
+@function sin($a) {
+  @return $a - $a*$a*$a/6 + $a*$a*$a*$a*$a/120;
+}
+
+@function cos($a) {
+  @return 1 - $a*$a/2 + $a*$a*$a*$a/24;
+}
+
+$pi: 3.1415;
+$menu-items: 5;
+$opening-angle: 1/2*$pi;
+$open-distance: 120px;
+.NavOps[shownav="1"]{
+  transition-timing-function:cubic-bezier(0.935, 0.000, 0.340, 1.330);
+  @for $i from 1 through $menu-items {
+    $angle: (($pi - $opening-angle)/2)+(($opening-angle/($menu-items - 1))*($i - 1));
+    &:nth-child(#{$i}){
+      transition-duration:80ms+(80ms*$i);
+      transform:translate3d(cos($angle)*$open-distance,sin($angle)*$open-distance,0);
+    }
+  }
 }

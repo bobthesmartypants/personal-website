@@ -4,11 +4,7 @@ import {Link} from "react-router-dom";
 import "./Navbar.scss";
 
 const NavOp = props => (
-    <div
-        className="NavOp"
-        shownav={props.showNav}
-        idx={props.idx}
-    >
+    <div className="NavOp">
         <Link to={props.path} className="NavOpText pointable">
             {props.text}
         </Link>
