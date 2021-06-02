@@ -7,8 +7,8 @@ import NavOps from "./NavOps";
 
 const Navbar = () => {
     // optionLabels and optionPaths biject
-    const optionLabels = ["Home", "Resume", "A/V", "Music Prod", "Hobbies"];
-    const optionPaths = ["/", "/resume", "/av", "/music", "/hobbies"];
+    const optionLabels = ["Home", "Resume", "Hobbies", "Music Prod", "A/V"];
+    const optionPaths = ["/", "/resume", "/hobbies", "/music", "/av"];
 
     const [showNav, setShowNav] = React.useState(0);
 
@@ -19,8 +19,9 @@ const Navbar = () => {
 
     return (
         <div className="Navbar">
-            <Logo logoClick={logoClick}/>
-            <NavOps options={optionLabels} paths={optionPaths} showNav={showNav}/>
+            <Logo logoClick={logoClick}>
+                <NavOps options={optionLabels} paths={optionPaths} showNav={showNav}/>
+            </Logo>
         </div>
     );
 };

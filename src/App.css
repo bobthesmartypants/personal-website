@@ -2,7 +2,7 @@
 
 .App{
     background-color: var(--white);
-    min-height: 100vh; /* TODO: temporary */
+    min-height: 200vh; /* TODO: temporary */
 }
 
 .App * {

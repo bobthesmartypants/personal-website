@@ -1,0 +1,69 @@
+
+/**
+ * Animation for opening and closing the navbar
+ */
+
+$pi: 3.1415;
+$menu-items: 5;
+$start-y: -3;
+$open-distance: 7;
+$timing-function: cubic-bezier(.3,.85,.5,1);
+
+@function sqrt($r) {
+  $unit: $r * 0 + 1;
+  $r: $r / $unit; // strip unit
+
+  $x0: 1;
+  $x1: $x0;
+
+  @for $i from 1 through 10 {
+    $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+    $x0: $x1;
+  }
+
+  $x1: $x1 * $unit; // restore unit
+  @return $x1;
+}
+
+
+@function calc-y($i, $n) {
+  $base: -$open-distance;
+  $step-size: 2*($start-y - $base)/($n - 1);
+  $stepped-y: $start-y - ($i - 1)*$step-size;
+  @if $stepped-y < $base {
+    $stepped-y: ($base - $stepped-y) + $base;
+  }
+  @return $stepped-y;
+}
+
+@function calc-x($i, $y, $n) {
+  $abs-x: sqrt($open-distance*$open-distance - $y*$y);
+  @if $i <= $n/2 {
+    $abs-x: $abs-x * -1;
+  }
+  @return $abs-x;
+}
+.NavOp[shownav="1"]{
+  @for $i from 1 through $menu-items {
+    $y: calc-y($i, $menu-items);
+    $x: calc-x($i, $y, $menu-items);
+    &:nth-child(#{$i}){
+      transform: translate3d(0em + $x,0em - $y,0);
+      visibility: visible;
+      opacity: 1;
+      transition: transform 80ms+(80ms*$i) $timing-function, opacity 80ms linear, visibility 0ms linear 0ms;
+    }
+  }
+}
+
+.NavOp[shownav="0"]{
+  transition-timing-function: $timing-function;
+  @for $i from 1 through $menu-items {
+    &:nth-child(#{$i}){
+      transform: translate3d(0,0,0);
+      visibility: hidden;
+      opacity: 0;
+      transition: transform 80ms+(80ms*$i) $timing-function, opacity 80ms linear, visibility 0ms linear 80ms;
+    }
+  }
+}

@@ -6,9 +6,10 @@ const Logo = (props) => {
 
     return (
         <div className="LogoContainer" >
-           <div className="Logo pointable" onClick={props.logoClick}>
-               dansl.dev
-           </div>
+            {props.children}
+            <div className="Logo pointable" onClick={props.logoClick}>
+                dansl.dev
+            </div>
         </div>
     );
 };
