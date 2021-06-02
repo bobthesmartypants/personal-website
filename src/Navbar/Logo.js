@@ -1,23 +1,14 @@
 import React from "react";
-// import {useHistory} from "react-router-dom";
 
 import "./Navbar.css";
 
-const Logo = () => {
-    /* TODO: fix this when you implement react router
-    const hist = useHistory();
-
-    const goHome = () => {
-        let path = "https://dansl.dev";
-        hist.push(path);
-    };
-    */
+const Logo = (props) => {
 
     return (
-        <div className="LogoContainer" /*onClick={goHome}*/>
-           <span className="Logo">
+        <div className="LogoContainer" >
+           <div className="Logo pointable" onClick={props.logoClick}>
                dansl.dev
-           </span>
+           </div>
         </div>
     );
 };

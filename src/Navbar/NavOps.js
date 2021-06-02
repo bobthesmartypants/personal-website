@@ -5,10 +5,8 @@ import "./Navbar.css";
 import NavOp from "./NavOp"
 
 const NavOps = props => {
-    const options = ["Option 1", "Option 2", "Option 3", "Option 4"];
-
-    const opComp = options.map(
-        item => (<NavOp text={item}/> )
+    const opComp = props.options.map(
+        (item, idx) => (<NavOp key={idx} idx={idx} text={item} path={props.paths[idx]} showNav={props.showNav}/> )
     );
 
     return (
