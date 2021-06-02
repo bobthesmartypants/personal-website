@@ -8,7 +8,7 @@ import NavOps from "./NavOps";
 const Navbar = () => {
     // optionLabels and optionPaths biject
     // also modify $menu-items in Navbar-anim.scss if array length changes
-    const optionLabels = ["Home", "Resume", "Hobbies", "Music Prod", "A/V"];
+    const optionLabels = ["Home", "Resume", "Hobbies", "Music", "A/V"];
     const optionPaths = ["/", "/resume", "/hobbies", "/music", "/av"];
 
     const [showNav, setShowNav] = useState(0);
