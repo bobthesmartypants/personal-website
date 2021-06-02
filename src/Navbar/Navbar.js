@@ -1,6 +1,6 @@
 import React from "react";
 
-import './Navbar.css';
+import './Navbar.scss';
 
 import Logo from "./Logo";
 import NavOps from "./NavOps";
