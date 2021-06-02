@@ -7,8 +7,15 @@
 
 @import "./Navbar-anim";
 
+
 .pointable {
   cursor: pointer;
+
+  /* Prevent text selection */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 $navbar-z-index: 9001;
@@ -29,7 +36,6 @@ $navbar-z-index: 9001;
 
 .NavOps {
   position: absolute;
-  z-index: $navbar-z-index - 1;
 
   /* Flexbox settings */
   display: flex;
@@ -38,9 +44,11 @@ $navbar-z-index: 9001;
 }
 
 .NavOp {
+  z-index: $navbar-z-index - 1;
   min-width: 6em; // Magic constant dependent on navbar word lengths
   position: absolute;
   opacity: 0;
+  transition: transform 0ms linear;
 
   /* Flexbox settings */
   display: flex;
@@ -53,6 +61,7 @@ $navbar-z-index: 9001;
 }
 
 .NavOpText {
+  z-index: $navbar-z-index - 1;
   text-decoration: none;
   font-weight: bold;
   font-family: 'Merriweather Sans', sans-serif;
@@ -60,6 +69,7 @@ $navbar-z-index: 9001;
 }
 
 .LogoContainer {
+  z-index: $navbar-z-index;
   width: 100%;
 
   /* Flexbox settings */
@@ -73,6 +83,7 @@ $navbar-z-index: 9001;
 }
 
 .Logo {
+  z-index: $navbar-z-index;
   font-family: 'Overlock', cursive;
   color: var(--white);
   text-shadow: 0 0 30px var(--darkergray);

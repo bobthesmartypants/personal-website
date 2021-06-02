@@ -11,8 +11,12 @@ const Navbar = () => {
     const optionLabels = ["Home", "Resume", "Hobbies", "Music Prod", "A/V"];
     const optionPaths = ["/", "/resume", "/hobbies", "/music", "/av"];
 
-    const [showNav, setShowNav] = useState(1);
+    const [showNav, setShowNav] = useState(0);
     const [leftTop, setLeftTop] = useState(0);
+
+    useEffect(() => {
+        setShowNav(1);
+    }, []);
 
     useEffect(() => {
         window.onscroll = () => {
