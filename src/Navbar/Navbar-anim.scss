@@ -3,56 +3,19 @@
  * Animation for opening and closing the navbar
  */
 
-$pi: 3.1415;
-$menu-items: 5; // hardcoded cuz I'm bad
-$start-y: -3em;
-$open-distance: 7em;
-$timing-function: cubic-bezier(.3,.85,.5,1);
+@import "./Navbar-anim-helper";
 
-@function getUnit($r){
-  @return $r * 0 + 1;
-}
+// Normal navbar settings
+$start-y-normal: -3em;
+$open-distance-normal: 7em;
+// Big navbar settings
+$start-y-large: 4.5em;
+$open-distance-large: 8em;
 
-/*
- * $r: number to square root, with unit $unit*$unit
- */
-@function sqrt($r, $unit) {
-  $r: $r / ($unit*$unit); // strip unit
-
-  $x0: 1;
-  $x1: $x0;
-
-  @for $i from 1 through 10 {
-    $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
-    $x0: $x1;
-  }
-
-  $x1: $x1 * $unit; // restore unit
-  @return $x1;
-}
-
-
-@function calc-y($i, $n) {
-  $base: -$open-distance;
-  $step-size: 2*($start-y - $base)/($n - 1);
-  $stepped-y: $start-y - ($i - 1)*$step-size;
-  @if $stepped-y < $base {
-    $stepped-y: ($base - $stepped-y) + $base;
-  }
-  @return -$stepped-y;
-}
-
-@function calc-x($i, $y, $n) {
-  $abs-x: sqrt($open-distance*$open-distance - $y*$y, getUnit($y));
-  @if $i <= $n/2 {
-    $abs-x: $abs-x * -1;
-  }
-  @return $abs-x;
-}
-.NavOp[shownav="1"]{
+.NavOp[show-nav="1"][is-large="0"]{
   @for $i from 1 through $menu-items {
-    $y: calc-y($i, $menu-items);
-    $x: calc-x($i, $y, $menu-items);
+    $y: calc-y($i, $menu-items, $start-y-normal, $open-distance-normal);
+    $x: calc-x($i, $y, $menu-items, $start-y-normal, $open-distance-normal);
     &:nth-child(#{$i}){
       transform: translate3d($x,$y,0);
       visibility: visible;
@@ -62,7 +25,20 @@ $timing-function: cubic-bezier(.3,.85,.5,1);
   }
 }
 
-.NavOp[shownav="0"]{
+.NavOp[show-nav="1"][is-large="1"]{
+  @for $i from 1 through $menu-items {
+    $y: calc-y($i, $menu-items, $start-y-large, $open-distance-large);
+    $x: calc-x($i, $y, $menu-items, $start-y-large, $open-distance-large);
+    &:nth-child(#{$i}){
+      transform: translate3d($x,$y,0);
+      visibility: visible;
+      opacity: 1;
+      transition: transform 80ms+(80ms*$i) $timing-function, opacity 80ms linear, visibility 0ms linear 0ms;
+    }
+  }
+}
+
+.NavOp[show-nav="0"]{
   transition-timing-function: $timing-function;
   @for $i from 1 through $menu-items {
     &:nth-child(#{$i}){

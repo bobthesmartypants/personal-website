@@ -1,3 +1,39 @@
 .Home {
 
 }
+
+.BackgroundContainer {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.BackgroundImage {
+    --shiftx: 0vmin;
+    --shifty: 0vmin;
+
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+.BackgroundImage::before {
+    content: "";
+    position: absolute;
+    width: 120vw;
+    height: 120vh;
+    left: -10vw;
+    top: -10vh;
+    z-index: -10000;
+    background-image: url("../images/bunny-cover.jpg");
+    background-size: cover;
+    background-position: center;
+    transform: translate3d(var(--shiftx), var(--shifty), 0);
+}

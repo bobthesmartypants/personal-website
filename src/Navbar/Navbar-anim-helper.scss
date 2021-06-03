@@ -1,0 +1,45 @@
+
+$menu-items: 5; // hardcoded cuz I'm bad
+$timing-function: cubic-bezier(.3,.85,.5,1);
+
+
+@function getUnit($r){
+  @return $r * 0 + 1;
+}
+
+/*
+ * $r: number to square root, with unit $unit*$unit
+ */
+@function sqrt($r, $unit) {
+  $r: $r / ($unit*$unit); // strip unit
+
+  $x0: 1;
+  $x1: $x0;
+
+  @for $i from 1 through 10 {
+    $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+    $x0: $x1;
+  }
+
+  $x1: $x1 * $unit; // restore unit
+  @return $x1;
+}
+
+
+@function calc-y($i, $n, $start-y, $open-distance) {
+  $base: -$open-distance;
+  $step-size: 2*($start-y - $base)/($n - 1);
+  $stepped-y: $start-y - ($i - 1)*$step-size;
+  @if $stepped-y < $base {
+    $stepped-y: ($base - $stepped-y) + $base;
+  }
+  @return -$stepped-y;
+}
+
+@function calc-x($i, $y, $n, $start-y, $open-distance) {
+  $abs-x: sqrt($open-distance*$open-distance - $y*$y, getUnit($y));
+  @if $i <= $n/2 {
+    $abs-x: $abs-x * -1;
+  }
+  @return $abs-x;
+}
