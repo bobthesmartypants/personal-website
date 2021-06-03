@@ -1,0 +1,49 @@
+
+.LogoContainer {
+  z-index: 9001;
+  width: 100%;
+
+  /* Flexbox settings */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Logo {
+  z-index: 9001;
+  font-family: 'Overlock', cursive;
+  color: var(--white);
+  text-shadow: 0 0 30px var(--darkergray);
+
+  /* Font size settings */
+  font-size: calc(30px + 4vmin);
+  padding: 0em 0.2em;
+  margin-top: 0.1em;
+
+  /* Flexbox settings */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Logo[is-large="1"] {
+  font-size: calc(20px + 6vmin);
+}
+
+#carat {
+  margin-bottom: -1.05em;
+  margin-top: -0.3em;
+  transform-origin: center 0.45em;
+
+  transition: transform 0.1s ease;
+}
+#carat[show-nav="0"] {
+  transform: rotate(180deg);
+}
+#carat[show-nav="1"] {
+  transform: rotate(0deg);
+}
+
+.Logo:hover #carat {
+
+}

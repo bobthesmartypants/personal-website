@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Navbar.scss";
+import "./Logo.scss";
 
 const Logo = (props) => {
 
@@ -8,7 +8,8 @@ const Logo = (props) => {
         <div className="LogoContainer" >
             {props.children}
             <div className="Logo pointable" onClick={props.logoClick} is-large={props.isLarge}>
-                dansl.dev
+                <span>dansl.dev</span>
+                <span id="carat" show-nav={props.showNav}>^</span>
             </div>
         </div>
     );

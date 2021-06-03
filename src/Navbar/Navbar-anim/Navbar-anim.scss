@@ -3,14 +3,14 @@
  * Animation for opening and closing the navbar
  */
 
-@import "./Navbar-anim-helper";
+@import "Navbar-anim-helper";
 
 // Normal navbar settings
-$start-y-normal: -3em;
-$open-distance-normal: 7em;
+$start-y-normal: -2em;
+$open-distance-normal: 5em;
 // Big navbar settings
-$start-y-large: 4.5em;
-$open-distance-large: 8em;
+$start-y-large: 3em;
+$open-distance-large: 6em;
 
 .NavOp[show-nav="1"][is-large="0"]{
   @for $i from 1 through $menu-items {

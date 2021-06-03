@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 
 import './Navbar.scss';
 
-import Logo from "./Logo";
+import Logo from "./Logo/Logo";
 import NavOps from "./NavOps";
 
 const Navbar = (props) => {
@@ -44,7 +44,7 @@ const Navbar = (props) => {
 
     return (
         <div className="Navbar" is-large={props.isLarge}>
-            <Logo logoClick={navReveal} isLarge={props.isLarge}>
+            <Logo logoClick={navReveal} isLarge={props.isLarge} showNav={showNav}>
                 <NavOps options={props.optionLabels} paths={props.optionPaths} showNav={showNav} isLarge={props.isLarge} />
             </Logo>
         </div>
