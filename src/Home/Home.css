@@ -27,12 +27,12 @@
 .BackgroundImage::before {
     content: "";
     position: absolute;
-    width: 120vw;
-    height: 120vh;
-    left: -10vw;
-    top: -10vh;
+    width: 110vw;
+    height: 110vh;
+    left: -5vw;
+    top: -5vh;
     z-index: -10000;
-    background-image: url("../images/bunny-cover.jpg");
+    background-image: url("../images/bunny-cover.png");
     background-size: cover;
     background-position: center;
     transform: translate3d(var(--shiftx), var(--shifty), 0);

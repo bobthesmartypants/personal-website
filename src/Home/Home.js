@@ -5,7 +5,7 @@ import "./Home.css";
 const Home = () => {
 
     const onPointerMove = (event) => {
-        const shiftMax = 10;
+        const shiftMax = 5;
         let normalizedCoords = {x: event.clientX / window.innerWidth, y: event.clientY / window.innerHeight};
         let newCoords = {x: (1-normalizedCoords.x*2)*shiftMax, y: (1-normalizedCoords.y*2)*shiftMax};
 
@@ -15,8 +15,8 @@ const Home = () => {
     };
 
     useEffect(() => {
-        window.addEventListener("pointermove", onPointerMove);
-        return () => {window.removeEventListener("pointermove", onPointerMove)};
+        window.addEventListener("mousemove", onPointerMove);
+        return () => {window.removeEventListener("mousemove", onPointerMove)};
     });
 
     return (
