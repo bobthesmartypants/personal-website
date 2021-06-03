@@ -5,7 +5,7 @@ import "./Home.css";
 const Home = () => {
 
     const onPointerMove = (event) => {
-        const shiftMax = 5;
+        const shiftMax = 2.9; // Not 3 to leave some buffer room
         let normalizedCoords = {x: event.clientX / window.innerWidth, y: event.clientY / window.innerHeight};
         let newCoords = {x: (1-normalizedCoords.x*2)*shiftMax, y: (1-normalizedCoords.y*2)*shiftMax};
 
