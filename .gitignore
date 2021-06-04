@@ -1,6 +1,8 @@
 # Adobe Illustrator gitignore
-
 Adobe/
+
+# batch scripts
+*.cmd
 
 
 #################################

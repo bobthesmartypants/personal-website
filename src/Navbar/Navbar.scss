@@ -21,8 +21,10 @@
   transform: scale3d(1, 1, 1);
 }
 
-.pointable:hover {
-  transform: scale3d(1.2, 1.2, 1);
+@media (hover: hover) {
+  .pointable:hover {
+    transform: scale3d(1.2, 1.2, 1);
+  }
 }
 
 .Navbar {
