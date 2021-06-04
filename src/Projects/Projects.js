@@ -1,7 +1,7 @@
 import React from "react";
 
-const Resume = () => {
+const Projects = () => {
     return <h1>Hello World from Resume!</h1>;
 };
 
-export default Resume;
+export default Projects;

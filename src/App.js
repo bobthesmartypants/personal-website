@@ -4,9 +4,13 @@ import {Switch, Route, Redirect} from "react-router-dom";
 import './App.css';
 
 import Navbar from "./Navbar/Navbar";
+
+// Page components
 import Home from "./Home/Home";
-import Resume from "./Resume/Resume";
-import Hobbies from "./Hobbies/Hobbies";
+
+import About from "./About/About";
+import Projects from "./Projects/Projects";
+import Skills from "./Skills/Skills";
 import Music from "./Music/Music";
 import AV from "./AV/AV";
 
@@ -14,18 +18,15 @@ const App = () => {
     // optionLabels and optionPaths biject
     // also modify $menu-items in Navbar-anim.scss if array length changes
     // Normal Navbar order
-    const optionLabels = ["Home", "About", "Resume", "Music", "A/V"];
-    const optionPaths = ["/", "/about", "/resume", "/music", "/av"];
-    // Large Navbar order
-    const optionLabelsLarge = ["About", "Resume", "Home", "Music", "A/V"];
-    const optionPathsLarge = ["/about", "/resume", "/", "/music", "/av"];
+    const optionLabels = ["About", "Projects", "Skills", "Music", "A/V"];
+    const optionPaths = ["/about", "/projects", "/skills", "/music", "/av"];
 
 
     return (
         <div className="App">
             <Switch>
-                <Route path={optionPaths[0]} exact>
-                    <Navbar key="nav-large" optionLabels={optionLabelsLarge} optionPaths={optionPathsLarge} isLarge={1} />
+                <Route path="/" exact>
+                    <Navbar key="nav-large" optionLabels={optionLabels} optionPaths={optionPaths} isLarge={1} />
                 </Route>
                 <Route>
                     <Navbar key="nav-normal" optionLabels={optionLabels} optionPaths={optionPaths} isLarge={0} />
@@ -33,12 +34,17 @@ const App = () => {
             </Switch>
 
             <Switch>
-                <Route path={optionPaths[1]} component={Resume} exact />
+                <Route path={optionPaths[0]} component={About} exact />
+                <Route path={optionPaths[0]}>
+                    <Redirect to={optionPaths[1]} />
+                </Route>
+
+                <Route path={optionPaths[1]} component={Projects} exact />
                 <Route path={optionPaths[1]}>
                     <Redirect to={optionPaths[1]} />
                 </Route>
 
-                <Route path={optionPaths[2]} component={Hobbies} exact />
+                <Route path={optionPaths[2]} component={Skills} exact />
                 <Route path={optionPaths[2]}>
                     <Redirect to={optionPaths[2]} />
                 </Route>
@@ -53,9 +59,9 @@ const App = () => {
                     <Redirect to={optionPaths[4]} />
                 </Route>
 
-                <Route path={optionPaths[0]} component={Home} exact />
+                <Route path="/" component={Home} exact />
                 <Route>
-                    <Redirect to={optionPaths[0]} />
+                    <Redirect to="/" />
                 </Route>
             </Switch>
         </div>

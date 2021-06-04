@@ -12,8 +12,8 @@
 .Logo {
   z-index: 9001;
   font-family: 'Overlock', cursive;
-  color: var(--white);
-  text-shadow: 0 0 30px var(--darkergray);
+  color: var(--darkergray);
+  text-shadow: 0 0 0.03em var(--darkergray);
 
   /* Font size settings */
   font-size: calc(30px + 4vmin);
@@ -28,6 +28,7 @@
 
 .Logo[is-large="1"] {
   font-size: calc(10px + 7vmin);
+  color: var(--white);
 }
 
 #carat {

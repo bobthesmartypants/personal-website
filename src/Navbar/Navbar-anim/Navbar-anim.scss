@@ -9,8 +9,8 @@
 $start-y-normal: -2em;
 $open-distance-normal: 5em;
 // Big navbar settings
-$start-y-large: 3em;
-$open-distance-large: 6em;
+$start-y-large: -2em;
+$open-distance-large: 5em;
 
 .NavOp[show-nav="1"][is-large="0"]{
   @for $i from 1 through $menu-items {

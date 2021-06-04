@@ -5,6 +5,9 @@ import "./Home.css";
 const Home = () => {
 
     const onPointerMove = (event) => {
+        if (!window.matchMedia("(hover: hover)").matches) return;
+
+        // move background only when hovering exists
         const shiftMax = 2.9; // Not 3 to leave some buffer room
         let normalizedCoords = {x: event.clientX / window.innerWidth, y: event.clientY / window.innerHeight};
         let newCoords = {x: (1-normalizedCoords.x*2)*shiftMax, y: (1-normalizedCoords.y*2)*shiftMax};
