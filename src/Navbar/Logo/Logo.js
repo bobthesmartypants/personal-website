@@ -7,7 +7,7 @@ const Logo = (props) => {
 
     return (
         <div className="LogoContainer" >
-            <div className="Logo pointable" onClick={props.logoClick} is-large={props.isLarge}>
+            <div className="Logo pointable scales" onClick={props.logoClick} is-large={props.isLarge}>
                 <span>dansl.dev</span>
                 <span id="carat" show-nav={props.showNav}>^</span>
             </div>

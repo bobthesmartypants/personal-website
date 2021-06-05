@@ -2,7 +2,10 @@
 @import "utils/Fonts.css";
 
 .App{
+    position: absolute;
+
     background-image: url("images/prism.png");
+    width: 100vw;
     min-height: 100vh;
     font-family: 'Merriweather Sans', sans-serif;
     text-shadow: 0 0 0.02em var(--darkergray);

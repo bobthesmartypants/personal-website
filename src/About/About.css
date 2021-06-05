@@ -1,3 +1,4 @@
+
 #about-main {
     padding: 5vh 5vw;
 
@@ -22,20 +23,42 @@
     transform: rotate(-3deg);
 }
 
+#picture-select:hover {
+}
+
 #picture-frame {
     width: 100%;
 }
 
 #propic {
     position: absolute;
+    top: 0;
+
     width: 88%;
     height: 75%;
-    margin: 6% 6% 19% 6%;
+    margin-top: 6%;
+    margin-left: 6%;
 
     background-image: url("../images/propic.png");
     background-size: cover;
 }
 
+#propic-caption {
+    position: absolute;
+    top: 0;
+
+    width: 88%;
+    height: 75%;
+    margin-top: 6%;
+    margin-left: 6%;
+
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.2s ease;
+}
+
+#propic-caption:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
 
 
 #desc-main {

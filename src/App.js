@@ -23,6 +23,7 @@ const App = () => {
 
     return (
         <div className="App">
+
             <Switch>
                 <Route path="/" exact>
                     <Navbar key="nav-large" optionLabels={optionLabels} optionPaths={optionPaths} isLarge={1} />
@@ -63,6 +64,9 @@ const App = () => {
                     <Redirect to="/" />
                 </Route>
             </Switch>
+
+
+
         </div>
     );
 }

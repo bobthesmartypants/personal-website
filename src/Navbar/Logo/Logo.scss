@@ -1,6 +1,5 @@
 
 .LogoContainer {
-  z-index: 9001;
   width: 100%;
 
   /* Flexbox settings */
@@ -10,7 +9,6 @@
 }
 
 .Logo {
-  z-index: 9001;
   font-family: 'Overlock', cursive;
   color: var(--white);
   text-shadow: 0 0 0.02em var(--white);

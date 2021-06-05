@@ -12,11 +12,14 @@ const About = () => {
         <div id="about-main">
             <div id="picture-main">
                 <div id="picture-container">
-                    <div id="propic" />
-                    <img src={polaroid} alt="polaroid frame" id="picture-frame"/>
+                    <div id="picture-select">
+                        <img src={polaroid} alt="polaroid frame" id="picture-frame"/>
+                        <div id="propic" />
+                        <div id="propic-caption">
+
+                        </div>
+                    </div>
                 </div>
-
-
             </div>
             <div id="desc-main">
                 hihiihihihiihhihih

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 
-import './Navbar.scss';
+import "./Header.css";
+import "./Navbar.scss";
 
 import Logo from "./Logo/Logo";
 import NavOps from "./NavOps";
@@ -54,8 +55,8 @@ const Navbar = (props) => {
 
     return (
         <div className="Header">
-            <HomeButton isLarge={props.isLarge}/>
-            <div className="Navbar" is-large={props.isLarge}>
+            <div id="HeaderPadding" is-large={props.isLarge} />
+            <div id="Navbar" is-large={props.isLarge}>
                 <Logo logoClick={navReveal} isLarge={props.isLarge} showNav={showNav}>
                     <NavOps
                         navClick={navReveal}
@@ -66,7 +67,7 @@ const Navbar = (props) => {
                     />
                 </Logo>
             </div>
-            <div id="HeaderPadding" is-large={props.isLarge} />
+            <HomeButton isLarge={props.isLarge}/>
         </div>
     );
 };
