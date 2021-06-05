@@ -6,7 +6,7 @@ import NavOp from "./NavOp"
 
 const NavOps = props => {
     const opComp = props.options.map(
-        (item, idx) => (<NavOp key={idx} text={item} path={props.paths[idx]} showNav={props.showNav} isLarge={props.isLarge}/> )
+        (item, idx) => (<NavOp key={idx} navClick={props.navClick} text={item} path={props.paths[idx]} showNav={props.showNav} isLarge={props.isLarge}/> )
     );
 
     return (

@@ -12,12 +12,12 @@
 .Logo {
   z-index: 9001;
   font-family: 'Overlock', cursive;
-  color: var(--darkergray);
-  text-shadow: 0 0 0.03em var(--darkergray);
+  color: var(--white);
+  text-shadow: 0 0 0.02em var(--white);
 
   /* Font size settings */
   font-size: calc(30px + 4vmin);
-  padding: 0em 0.2em;
+  padding: 0 0.2em;
   margin-top: 0.1em;
 
   /* Flexbox settings */

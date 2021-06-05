@@ -10,7 +10,6 @@
 
 .Header {
   font-family: 'Overlock', cursive;
-  text-shadow: 0 0 0.03em var(--darkergray);
   font-weight: bold;
   font-size: calc(30px + 4vmin);
 }
@@ -37,7 +36,7 @@
   margin: 0.6em 0.4em;
 
   text-decoration: none;
-  color: var(--darkergray);
+  color: var(--white);
 
 }
 
@@ -92,7 +91,7 @@
   z-index: 8000;
   text-decoration: none;
 
-  color: var(--darkergray);
+  color: var(--white);
 
   padding: 0.1em 0.5em;
 }

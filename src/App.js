@@ -18,9 +18,8 @@ const App = () => {
     // optionLabels and optionPaths biject
     // also modify $menu-items in Navbar-anim.scss if array length changes
     // Normal Navbar order
-    const optionLabels = ["About", "Projects", "Skills", "Music", "A/V"];
-    const optionPaths = ["/about", "/projects", "/skills", "/music", "/av"];
-
+    const optionLabels = ["About", "Skills", "Projects", "Music", "A/V"];
+    const optionPaths = ["/about", "/skills", "/projects", "/music", "/av"];
 
     return (
         <div className="App">
@@ -36,7 +35,7 @@ const App = () => {
             <Switch>
                 <Route path={optionPaths[0]} component={About} exact />
                 <Route path={optionPaths[0]}>
-                    <Redirect to={optionPaths[1]} />
+                    <Redirect to={optionPaths[0]} />
                 </Route>
 
                 <Route path={optionPaths[1]} component={Projects} exact />

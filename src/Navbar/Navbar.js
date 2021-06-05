@@ -57,7 +57,13 @@ const Navbar = (props) => {
             <HomeButton isLarge={props.isLarge}/>
             <div className="Navbar" is-large={props.isLarge}>
                 <Logo logoClick={navReveal} isLarge={props.isLarge} showNav={showNav}>
-                    <NavOps options={props.optionLabels} paths={props.optionPaths} showNav={showNav} isLarge={props.isLarge} />
+                    <NavOps
+                        navClick={navReveal}
+                        options={props.optionLabels}
+                        paths={props.optionPaths}
+                        showNav={showNav}
+                        isLarge={props.isLarge}
+                    />
                 </Logo>
             </div>
             <div id="HeaderPadding" is-large={props.isLarge} />
