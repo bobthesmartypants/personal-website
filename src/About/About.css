@@ -1,0 +1,46 @@
+#about-main {
+    padding: 5vh 5vw;
+
+    /* Flexbox settings */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#picture-main {
+    flex-grow: 1;
+    width: 30%;
+    min-width: 300px;
+    margin: 5vh 5vw;
+}
+
+#picture-container {
+    width: 80%;
+    margin: 0 10%;
+
+    transform: rotate(-3deg);
+}
+
+#picture-frame {
+    width: 100%;
+}
+
+#propic {
+    position: absolute;
+    width: 88%;
+    height: 75%;
+    margin: 6% 6% 19% 6%;
+
+    background-image: url("../images/propic.png");
+    background-size: cover;
+}
+
+
+
+#desc-main {
+    flex-grow: 1;
+    width: 30%;
+    min-width: 300px;
+    margin: 5vh 5vw;
+}

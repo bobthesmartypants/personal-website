@@ -6,6 +6,8 @@
     min-height: 100vh;
     font-family: 'Merriweather Sans', sans-serif;
     text-shadow: 0 0 0.02em var(--darkergray);
+    font-size: calc(10px + 3vmin);
+    color: var(--white);
 }
 
 .App * {
