@@ -36,5 +36,5 @@
     background-image: url("../images/bunny-cover.png");
     background-size: cover;
     background-position: center;
-    transform: translate(var(--shiftx), var(--shifty), 0);
+    transform: translate3d(var(--shiftx), var(--shifty), 0);
 }
