@@ -14,7 +14,6 @@
     transform: scale3d(1, 1, 1);
 }
 
-/* TODO: weird bug where hover resets when screenblur changes display in Header.css */
 @media (hover: hover) {
     .scales:hover {
         transform: scale3d(1.2, 1.2, 1);
