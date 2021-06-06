@@ -3,30 +3,24 @@ import React from "react";
 import "./About.css";
 import "../pointable.css";
 
-import polaroid from "../images/polaroid-frame.png";
+import AboutEntry from "./AboutEntry";
+
+import bio from "../Text Content/bio.json";
 
 const About = () => {
 
+    let textEntries = bio.text;
+    let captions = bio.captions;
+    let aboutEntries = textEntries.map((item, idx) => (
+        <AboutEntry key={"entry-" + item} idx={idx} text={item} caption={captions?.[idx]} />
+    ));
 
     return (
         <div id="about-main">
-            <div id="picture-main">
-                <div id="picture-container">
-                    <div id="picture-select">
-                        <img src={polaroid} alt="polaroid frame" id="picture-frame"/>
-                        <div id="propic" />
-                        <div id="propic-caption">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="desc-main">
-                hihiihihihiihhihih
-
-            </div>
+            {aboutEntries}
         </div>
     );
+
 };
 
 export default About;

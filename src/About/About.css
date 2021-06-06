@@ -1,5 +1,9 @@
 
 #about-main {
+
+}
+
+.entry-main {
     padding: 5vh 5vw;
 
     /* Flexbox settings */
@@ -9,28 +13,34 @@
     align-items: center;
 }
 
-#picture-main {
+.entry-main:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.picture-main {
     flex-grow: 1;
     width: 30%;
     min-width: 300px;
     margin: 5vh 5vw;
 }
 
-#picture-container {
+.picture-container {
     width: 80%;
     margin: 0 10%;
 
+}
+.picture-container[parity="0"] {
     transform: rotate(-3deg);
 }
-
-#picture-select:hover {
+.picture-container[parity="1"] {
+    transform: rotate(3deg);
 }
 
-#picture-frame {
+.picture-frame {
     width: 100%;
 }
 
-#propic {
+.propic {
     position: absolute;
     top: 0;
 
@@ -39,11 +49,20 @@
     margin-top: 6%;
     margin-left: 6%;
 
-    background-image: url("../images/propic.png");
     background-size: cover;
 }
 
-#propic-caption {
+.propic[idx="0"] {
+    background-image: url("../images/propic.png");
+}
+.propic[idx="1"] {
+    background-image: url("../images/singing.png");
+}
+.propic[idx="2"] {
+    background-image: url("../images/lol.png");
+}
+
+.propic-caption-container {
     position: absolute;
     top: 0;
 
@@ -54,16 +73,36 @@
 
     background-color: rgba(0, 0, 0, 0);
     transition: background-color 0.2s ease;
+
 }
 
-#propic-caption:hover {
+.propic-caption-container:hover {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.propic-caption {
+    width: 100%;
+    height: 100%;
 
-#desc-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.propic-caption:hover {
+    opacity: 1;
+}
+
+
+.desc-main {
     flex-grow: 1;
     width: 30%;
     min-width: 300px;
     margin: 5vh 5vw;
+
+    text-align: center;
 }

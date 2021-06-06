@@ -10,7 +10,7 @@
 
 #HeaderPadding {
     position: relative;
-    height: 1.5em;
+    height: 3em;
 }
 
 #HeaderPadding[is-large="1"] {
