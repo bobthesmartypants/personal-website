@@ -1,5 +1,5 @@
 
-.BackgroundContainer {
+#BackgroundContainer {
     position: relative;
 
     height: 100vh;
@@ -13,7 +13,7 @@
 }
 
 
-.BackgroundImage {
+#BackgroundImage {
     --shiftx: 0vmin;
     --shifty: 0vmin;
 
@@ -25,7 +25,7 @@
 
 }
 
-.BackgroundImage::before {
+#BackgroundImage::before {
     content: "";
     position: absolute;
     width: 106vw;

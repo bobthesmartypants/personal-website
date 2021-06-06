@@ -7,36 +7,13 @@ import Logo from "./Logo/Logo";
 import NavOps from "./NavOps";
 import HomeButton from "./HomeButton";
 
-/*
- * Commented out entire scroll to top code for now
- * Might reinclude if it comes to it
- */
 
 const Navbar = (props) => {
 
     const [showNav, setShowNav] = useState(0);
-    // const [leftTop, setLeftTop] = useState(0);
-
-    /*
-    // When mounting
-    useEffect(() => {
-        if (!props.isLarge) {
-            setShowNav(1);
-        }
-    }, []);
-    */
 
     // On scroll event management
     const onScroll = () => {
-        if (props.isLarge) return;
-        /*
-        if (window.pageYOffset === 0) {
-            setShowNav(1);
-            setLeftTop(0);
-        } else if (leftTop === 0) {
-            setShowNav(0);
-            setLeftTop(1);
-        }*/
 
     };
 
@@ -46,15 +23,13 @@ const Navbar = (props) => {
     });
 
     const navReveal = () => {
-        // if (window.pageYOffset === 0 && !props.isLarge) return;
-
-        // toggle given that we're not on top of the page
         setShowNav(prevVal => 1-prevVal);
         console.log("clicked");
     };
 
     return (
         <div className="Header">
+            <div id="screenblur" show-nav={showNav} is-large={props.isLarge}/>
             <div id="HeaderPadding" is-large={props.isLarge} />
             <div id="Navbar" is-large={props.isLarge}>
                 <Logo logoClick={navReveal} isLarge={props.isLarge} showNav={showNav}>

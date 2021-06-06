@@ -5,6 +5,7 @@ import "./Home.css";
 const Home = () => {
 
     const onPointerMove = (event) => {
+
         if (!window.matchMedia("(hover: hover)").matches) return;
 
         // move background only when hovering exists
@@ -12,7 +13,7 @@ const Home = () => {
         let normalizedCoords = {x: event.clientX / window.innerWidth, y: event.clientY / window.innerHeight};
         let newCoords = {x: (1-normalizedCoords.x*2)*shiftMax, y: (1-normalizedCoords.y*2)*shiftMax};
 
-        let backgroundElem = document.getElementById("home-background");
+        let backgroundElem = document.getElementById("BackgroundImage");
         backgroundElem.style.setProperty("--shiftx" , newCoords.x + "vmin");
         backgroundElem.style.setProperty("--shifty" , newCoords.y + "vmin");
     };
@@ -23,8 +24,8 @@ const Home = () => {
     });
 
     return (
-        <div className="BackgroundContainer" >
-            <div id="home-background" className="BackgroundImage" />
+        <div id="BackgroundContainer" >
+            <div id="BackgroundImage" />
         </div>
     );
 };
