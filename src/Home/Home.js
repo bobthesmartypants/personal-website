@@ -14,6 +14,7 @@ const Home = () => {
         let newCoords = {x: (1-normalizedCoords.x*2)*shiftMax, y: (1-normalizedCoords.y*2)*shiftMax};
 
         let backgroundElem = document.getElementById("BackgroundImage");
+        if (backgroundElem == null) return; // catch edge case of trying to get element after page changes
         backgroundElem.style.setProperty("--shiftx" , newCoords.x + "vmin");
         backgroundElem.style.setProperty("--shifty" , newCoords.y + "vmin");
     };
