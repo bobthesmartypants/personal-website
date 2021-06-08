@@ -1,7 +1,5 @@
 
-.Header {
-    font-family: 'Overlock', cursive;
-    font-weight: bold;
+#Header {
     font-size: calc(30px + 4vmin);
 
     position: relative;
@@ -17,7 +15,7 @@
     height: 0;
 }
 
-.HomeButtonContainer {
+#HomeButtonContainer {
     position: fixed;
     top: 0;
 
@@ -25,7 +23,7 @@
     transform: translate3d(0.1em, 0.1em, 0) rotate(-90deg);
 }
 
-.HomeButtonText {
+#HomeButtonText {
     margin: 0.6em 0.4em;
 
     text-decoration: none;

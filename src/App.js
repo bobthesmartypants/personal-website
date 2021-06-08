@@ -22,7 +22,7 @@ const App = () => {
     const optionPaths = ["/about", "/skills", "/projects", "/music", "/av"];
 
     return (
-        <div className="App">
+        <div id="App" className="content-font">
 
             <Switch>
                 <Route path="/" exact>
@@ -39,12 +39,12 @@ const App = () => {
                     <Redirect to={optionPaths[0]} />
                 </Route>
 
-                <Route path={optionPaths[1]} component={Projects} exact />
+                <Route path={optionPaths[1]} component={Skills} exact />
                 <Route path={optionPaths[1]}>
                     <Redirect to={optionPaths[1]} />
                 </Route>
 
-                <Route path={optionPaths[2]} component={Skills} exact />
+                <Route path={optionPaths[2]} component={Projects} exact />
                 <Route path={optionPaths[2]}>
                     <Redirect to={optionPaths[2]} />
                 </Route>

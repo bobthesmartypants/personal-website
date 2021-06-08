@@ -8,9 +8,9 @@ const HomeButton = (props) => {
     if (props.isLarge) return null;
 
     return (
-        <div className="HomeButtonContainer">
+        <div id="HomeButtonContainer">
             <div className="pointable scales">
-                <Link to="/" className="HomeButtonText " is-large={props.isLarge}>
+                <Link to="/" id="HomeButtonText" is-large={props.isLarge}>
                     ^
                 </Link>
             </div>

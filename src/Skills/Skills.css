@@ -1,0 +1,28 @@
+
+#skills-main-container {
+    display: flex;
+    justify-content: center;
+}
+
+#skills-main {
+
+}
+
+#skillnav-main {
+    display: flex;
+    justify-content: center;
+}
+
+#skillnav-left {
+    padding: 0.5em 0.8em;
+    margin-right: -0.5em;
+
+}
+#skillnav-right {
+    padding: 0.5em 0.8em;
+    margin-left: -0.5em;
+}
+
+#skill-name {
+    padding-top: 0.57em;
+}

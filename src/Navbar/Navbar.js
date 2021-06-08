@@ -28,7 +28,7 @@ const Navbar = (props) => {
     };
 
     return (
-        <div className="Header">
+        <div id="Header" className="title-font">
             <div id="screenblur" show-nav={showNav} is-large={props.isLarge}/>
             <div id="HeaderPadding" is-large={props.isLarge} />
             <div id="Navbar" is-large={props.isLarge}>

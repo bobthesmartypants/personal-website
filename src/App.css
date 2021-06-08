@@ -1,19 +1,18 @@
 @import "utils/ColorPalette.css";
 @import "utils/Fonts.css";
 
-.App{
+#App{
     position: absolute;
 
     background-image: url("images/prism.png");
     width: 100%;
     min-height: 100vh;
 
-    font-family: 'Merriweather Sans', sans-serif;
     text-shadow: 0 0 0.02em var(--darkergray);
     font-size: calc(10px + 3vmin);
     color: var(--white);
 }
 
-.App * {
+#App * {
     /*border: red solid;*/
 }

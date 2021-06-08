@@ -26,6 +26,10 @@ const AboutEntry = (props) => {
     };
 
     useEffect(() => {
+        scaleText();
+    }, []);
+
+    useEffect(() => {
         window.addEventListener('resize', scaleText);
 
         return () => (window.removeEventListener('resize', scaleText));
