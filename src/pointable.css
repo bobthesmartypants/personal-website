@@ -13,9 +13,16 @@
     transition: transform 0.2s ease;
     transform: scale3d(1, 1, 1);
 }
+.scales-small {
+    transition: transform 0.2s ease;
+    transform: scale3d(1, 1, 1);
+}
 
 @media (hover: hover) {
     .scales:hover {
         transform: scale3d(1.2, 1.2, 1);
+    }
+    .scales-small:hover {
+        transform: scale3d(1.1, 1.1, 1);
     }
 }

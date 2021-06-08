@@ -75,12 +75,15 @@
     margin-top: 6%;
     margin-left: 6%;
 
-    background-color: rgba(0, 0, 0, 0);
     transition: background-color 0.2s ease;
 
 }
 
-.propic-caption-container:hover {
+.propic-caption-container[show="0"] {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.propic-caption-container[show="1"] {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -94,10 +97,14 @@
 
     text-align: center;
 
-    opacity: 0;
     transition: opacity 0.2s ease;
 }
-.propic-caption:hover {
+
+.propic-caption[show="0"] {
+    opacity: 0;
+}
+
+.propic-caption[show="1"] {
     opacity: 1;
 }
 
